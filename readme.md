@@ -40,24 +40,24 @@ Telegram-бот, который парсит данные с динамичес�
    cd telegram-parser-bot
    ```
 
-4. Создайте виртуальное окружение:
-   ```bash
-   python -m venv venv
-   ```
-
-5. Активируйте окружение:
-   - Windows:
-     ```bash
-     venv\Scripts\activate
+4. Установите менеджер пакетов **uv** :
+   - Windows (PowerShell):
+     ```powershell
+     powershell -c "irm https://astral-sh/uv/install.ps1 | iex"
      ```
    - macOS/Linux:
      ```bash
-     source venv/bin/activate
+     curl -LsSf https://astral-sh/uv/install.sh | sh
      ```
 
-6. Установите зависимости:
+5. Создайте и автоматически активируйте изолированное виртуальное окружение:
    ```bash
-   pip install -r requirements.txt
+   uv venv
+   ```
+
+6. Установите зависимости проекта и инструменты разработки:
+   ```bash
+   uv pip install -e ".[dev]"
    ```
 
 7. Создайте Telegram-бота через [@BotFather](https://t.me/BotFather) и получите токен.
